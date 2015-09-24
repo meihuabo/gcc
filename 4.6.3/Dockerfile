@@ -15,6 +15,10 @@ RUN set -xe \
 # add by meihuabo
 # gcc version lower than 4.7
 RUN cd /root \
+	&& wget http://ftp.us.debian.org/debian/pool/main/libb/libbsd/libbsd0_0.7.0-2_amd64.deb \
+	&& dpkg -i libbsd0_0.7.0-2_amd64.deb \
+	&& wget http://ftp.us.debian.org/debian/pool/main/libb/libbsd/libbsd-dev_0.7.0-2_amd64.deb \
+	&& dpkg -i libbsd-dev_0.7.0-2_amd64.deb \
 	&& wget http://ftp.us.debian.org/debian/pool/main/g/glibc/libc6_2.19-18+deb8u1_amd64.deb \
 	&& dpkg -i libc6_2.19-18+deb8u1_amd64.deb \
 	&& wget http://ftp.us.debian.org/debian/pool/main/g/glibc/libc-dev-bin_2.19-18+deb8u1_amd64.deb \
