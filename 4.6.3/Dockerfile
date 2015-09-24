@@ -15,8 +15,12 @@ RUN set -xe \
 # add by meihuabo
 # gcc version lower than 4.7
 RUN cd /root \
+	&& wget http://ftp.us.debian.org/debian/pool/main/g/glibc/libc6_2.19-18+deb8u1_amd64.deb \
+	&& dpkg -i libc6_2.19-18+deb8u1_amd64.deb \
+	&& wget http://ftp.us.debian.org/debian/pool/main/g/glibc/libc-dev-bin_2.19-18+deb8u1_amd64.deb \
+	&& dpkg -i libc-dev-bin_2.19-18+deb8u1_amd64.deb \
 	&& wget http://ftp.us.debian.org/debian/pool/main/g/glibc/libc6-dev_2.19-18+deb8u1_amd64.deb \
-	&& dpkg -i libc6-dev_2.19-18+deb8u1_amd64.deb
+	&& dpkg -i libc6-dev_2.19-18+deb8u1_amd64.deb \
 	&& cd /
 # Last Modified: 2015-09-18
 ENV GCC_VERSION 4.6.2
