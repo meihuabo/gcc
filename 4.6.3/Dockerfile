@@ -12,7 +12,12 @@ RUN set -xe \
 	&& for key in $GPG_KEYS; do \
 		gpg --keyserver ha.pool.sks-keyservers.net --recv-keys "$key"; \
 	done
-
+# add by meihuabo
+# gcc version lower than 4.7
+RUN cd /root \
+	&& wget http://ftp.us.debian.org/debian/pool/main/g/glibc/libc6-dev_2.19-18+deb8u1_i386.deb \
+	&& dpkg -i libc6-dev_2.19-18+deb8u1_i386.deb
+	&& cd /
 # Last Modified: 2015-09-18
 ENV GCC_VERSION 4.6.2
 # Docker EOL: 2016-09-18
