@@ -14,7 +14,7 @@ RUN set -xe \
 	done
 
 # Last Modified: 2015-09-18
-ENV GCC_VERSION 4.6.3
+ENV GCC_VERSION 4.6.2
 # Docker EOL: 2016-09-18
 
 # "download_prerequisites" pulls down a bunch of tarballs and extracts them,
